@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --ff-body: serif;
+  --ff-heading: serif;
+
+  --fs-300: 0.7rem;
+  --fs-400: 0.8rem;
+  --fs-500: 1rem;
+  --fs-600: 1.2rem;
+  --fs-700: 1.5rem;
+  --fs-800: 3rem;
+  --fs-900: 5rem;
+}
+
+/* Light Theme */
+[data-theme='light'] {
+  --clr-text-main: hsl(0, 100%, 50%);
+  --clr-text-alt: hsl(214, 52%, 85%);
+
+  --clr-link: hsl(217, 16%, 68%);
+
+  --bgc-main: hsl(0, 0%, 100%);
+
+  --clr-primary: hsl(217, 22%, 32%);
+  --clr-secondary: hsl(210, 20%, 22%);
+}
+/* Dark Theme */
+[data-theme='dark'] {
+  --clr-text-main: hsl(212, 16%, 80%);
+  --clr-text-alt: hsl(214, 52%, 85%);
+
+  --clr-link: hsl(217, 16%, 68%);
+
+  --bgc-main: hsl(227, 15%, 12%);
+
+  --clr-primary: hsl(217, 22%, 32%);
+  --clr-secondary: hsl(210, 20%, 22%);
+}
+
+:root {
+  color: var(--clr-text-main);
+  background-color: var(--bgc-main);
+}
