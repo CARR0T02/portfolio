@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.6.4"
+    "astro": "^2.6.4",
+    "sass": "^1.63.4"
   }
 }
