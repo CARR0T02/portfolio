@@ -1,5 +1,8 @@
 ---
-import '../styles/global.css';
+import MainLayout from '@layouts/MainLayout.astro';
+import About from '@components/Home/About.astro';
+import Projects from '@components/Home/Projects.astro';
+import Contact from '@components/Home/Contact.astro';
 ---
 
 <html lang='en'>
@@ -11,11 +14,12 @@ import '../styles/global.css';
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <MainLayout>
+      <main>
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+    </MainLayout>
   </body>
 </html>
-<script>
-  import { getColorScheme } from 'src/scripts/colorSchemeHelper';
-
-  getColorScheme();
-</script>

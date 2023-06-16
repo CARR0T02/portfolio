@@ -17,7 +17,7 @@ export function getColorScheme() {
 }
 
 export function toggleColorScheme() {
-  const container = document.body;
+  const container = document.documentElement;
   let theme = container.getAttribute('data-theme');
   if (theme === null) {
     return;
