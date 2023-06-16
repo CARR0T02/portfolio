@@ -1,3 +1,4 @@
+/* Resets */
 *,
 *::before,
 *::after {
@@ -11,6 +12,14 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 :root {
@@ -32,6 +41,8 @@ svg {
   --clr-text-alt: hsl(214, 52%, 85%);
 
   --clr-link: hsl(217, 16%, 68%);
+  --clr-link-hover: hsl(217, 16%, 80%);
+  --clr-link-active: hsl(0, 0%, 100%);
 
   --bgc-main: hsl(0, 0%, 100%);
 
@@ -44,14 +55,69 @@ svg {
   --clr-text-alt: hsl(214, 52%, 85%);
 
   --clr-link: hsl(217, 16%, 68%);
+  --clr-link-hover: hsl(217, 16%, 80%);
+  --clr-link-active: hsl(0, 0%, 100%);
 
-  --bgc-main: hsl(227, 15%, 12%);
+  --bgc-main: hsl(227, 15%, 15%);
+  --bgc-alt: hsl(210, 25%, 17%);
 
-  --clr-primary: hsl(217, 22%, 32%);
-  --clr-secondary: hsl(210, 20%, 22%);
+  --clr-primary-text: hsl(20, 100%, 65%);
+  --clr-primary-bg: hsla(20, 100%, 55%, 0.1);
+  --clr-secondary: hsl(172, 70%, 55%);
 }
 
-:root {
+/* Helper Classes */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+  .lg-visible {
+    display: none;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 600px) {
+  .lg-hidden {
+    display: none;
+  }
+
+  a:hover {
+    color: var(--clr-link-hover);
+  }
+  svg.link-icon:hover,
+  svg.link-icon-sm {
+    fill: var(--clr-link-hover);
+  }
+}
+
+body {
   color: var(--clr-text-main);
-  background-color: var(--bgc-main);
+
+  background: no-repeat fixed
+    repeating-linear-gradient(var(--bgc-alt), var(--bgc-main) 100vh);
+  padding: 1.2rem;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--clr-link);
+  text-decoration: none;
+}
+
+svg.link-icon,
+svg.link-icon-sm {
+  aspect-ratio: 1/1;
+  fill: var(--clr-link);
+}
+
+svg.link-icon {
+  width: 16px;
+}
+
+svg.link-icon-sm {
+  width: 8px;
 }

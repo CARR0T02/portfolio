@@ -1,0 +1,22 @@
+---
+import Tags from '@components/Tags.astro';
+const { mdFile } = Astro.props;
+---
+
+<li>
+  <div>
+    <a href={mdFile.frontmatter.url}>
+      <span>{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span>
+      <header>
+        {mdFile.frontmatter.position} · {mdFile.frontmatter.company}
+      </header>
+      <mdFile.Content />
+      <Tags tags={mdFile.frontmatter.tags} />
+    </a>
+  </div>
+</li>
+<style>
+  li {
+    padding-block: 1rem;
+  }
+</style>
