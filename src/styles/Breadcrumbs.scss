@@ -1,0 +1,4 @@
+@use 'astro-breadcrumbs/breadcrumbs.scss' with (
+  $color-hover-link: var(--clr-link-hover),
+  $color-is-current: var(--clr-link-active)
+);
