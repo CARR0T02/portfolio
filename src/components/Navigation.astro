@@ -1,14 +1,25 @@
 ---
 ---
 
-<nav class='flex'>
-  <div class='flex'>
+<nav>
+  <button id='toggle-nav' class='lg-hidden'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      height='48'
+      viewBox='0 -960 960 960'
+      width='48'
+      ><path
+        d='M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z'
+      ></path></svg
+    >
+  </button>
+  <div class='nav-links'>
     <a class='link' href='/#about'>About</a>
     <a class='link' href='/#experience'>Experience</a>
     <a class='link' href='/#projects'>Projects</a>
     <a class='link' href='/projects'>Archive</a>
   </div>
-  <button id='toggle-theme' class='link clickable'
+  <button id='toggle-theme' class='link clickable lg-visible'
     ><svg
       xmlns='http://www.w3.org/2000/svg'
       height='48'
@@ -22,23 +33,59 @@
 </nav>
 <style>
   nav {
-    position: sticky;
     top: 0;
     width: 100vw;
-    padding: 1.5rem;
     background-color: var(--bgc-main);
-    opacity: 0.96;
   }
-  div {
-    gap: 2rem;
-    font-size: var(--fs-600);
-  }
-  #toggle-theme {
-    margin-left: auto;
+
+  button {
     padding: 0;
-    width: 32px;
     background: none;
     border: none;
+  }
+  @media screen and (max-width: 600px) {
+    .nav-links.visible {
+      display: flex !important;
+    }
+
+    nav {
+      position: fixed;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .nav-links > a {
+      padding: 1.2rem 1.5rem;
+    }
+    #toggle-nav {
+      position: relative;
+      width: 32px;
+      left: 1rem;
+      top: 0;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    nav {
+      display: flex;
+      align-items: center;
+      position: sticky;
+      padding: 1.5rem;
+      opacity: 0.96;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: var(--fs-600);
+    }
+
+    #toggle-theme {
+      margin-left: auto;
+      width: 32px;
+    }
   }
 </style>
 <script>
@@ -46,4 +93,23 @@
   document
     .querySelector('#toggle-theme')
     ?.addEventListener('click', toggleColorScheme);
+
+  document
+    .querySelector('#toggle-nav')
+    ?.addEventListener('click', function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      const toggleBtn = document.querySelector('#toggle-nav');
+      if (toggleBtn === null || navLinks === null) {
+        console.log('Nav toggle button or Nav not found');
+        return;
+      }
+      if (navLinks.classList.contains('visible')) {
+        toggleBtn.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>';
+      } else {
+        toggleBtn.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>';
+      }
+      navLinks.classList.toggle('visible');
+    });
 </script>
