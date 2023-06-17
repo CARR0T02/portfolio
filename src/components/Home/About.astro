@@ -3,8 +3,10 @@ import * as about from '@content/about.md';
 import Tags from '../Tags.astro';
 ---
 
-<section>
+<section id='about'>
   <h2>{about.frontmatter.title}</h2>
-  <Tags tags={about.frontmatter.languages} />
   <about.Content />
+  <h3>Languages I know</h3>
+  <Tags tags={about.frontmatter.languages} />
+  <!-- ! Include resume -->
 </section>
