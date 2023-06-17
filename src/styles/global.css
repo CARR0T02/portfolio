@@ -18,6 +18,10 @@ ul {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -83,6 +87,10 @@ li {
   cursor: pointer;
 }
 
+html {
+  scroll-padding-top: 55px;
+}
+
 body {
   color: var(--clr-text-main);
 
@@ -106,15 +114,14 @@ a {
 
 svg {
   aspect-ratio: 1/1;
+}
+
+svg.icon {
   fill: var(--clr-link);
 }
 
-svg.link-icon {
+svg.small {
   width: 16px;
-}
-
-svg.link-icon-sm {
-  width: 8px;
 }
 
 /* Small screens */
@@ -126,6 +133,9 @@ svg.link-icon-sm {
 
 /* Large screens */
 @media screen and (min-width: 600px) {
+  html {
+    scroll-padding-top: 100px;
+  }
   .lg-hidden {
     display: none;
   }

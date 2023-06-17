@@ -1,7 +1,7 @@
 ---
 title: About Me
 name: Gabriel Chang
-languages: ['JavaScript', 'React', 'HTML', 'CSS', 'Sass', 'Python']
+languages: ['JavaScript', 'HTML', 'CSS', 'SCSS', 'Python']
 lib-frame: ['Tailwind', 'React', 'Astro', 'Bulma', 'Flowbite']
 tools: ['Git', 'GitHub', 'Firebase', 'Webpack', 'Jest']
 ---

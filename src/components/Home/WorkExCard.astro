@@ -4,16 +4,16 @@ const { mdFile } = Astro.props;
 ---
 
 <li>
-  <div>
-    <a href={mdFile.frontmatter.url}>
+  <a href={mdFile.frontmatter.url}>
+    <div>
       <span>{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span>
-      <header>
+      <header class='link'>
         {mdFile.frontmatter.position} · {mdFile.frontmatter.company}
       </header>
       <mdFile.Content />
       <Tags tags={mdFile.frontmatter.tags} />
-    </a>
-  </div>
+    </div>
+  </a>
 </li>
 <style>
   li {
