@@ -4,19 +4,47 @@
 <nav id="aside-nav">
     <ul>
         <li data-for="about" class="aside-nav-link active">
-            <a class='link ' href='/#about'>About</a>
+            <a class='link' href='/#about'>
+                <span class="line"></span>
+                <span>About</span>
+            </a>
         </li>
         <li data-for="experience" class="aside-nav-link">
-            <a class='' href='/#experience'>Experience</a>
+            <a class="link" href='/#experience'>
+                <span class="line"></span>
+                <span>Experience</span>
+            </a>
         </li>
         <li data-for="projects" class="aside-nav-link">
-            <a class='link' href='/#projects'>Projects</a>
+            <a class='link' href='/#projects'>
+                <span class="line"></span>
+                <span>Projects</span>
+            </a>
         </li>
     </ul>
 </nav>
 <style>
-    .active {
-        background-color: #fff;
+    .link {
+        display: flex;
+        align-items: center;
+        padding-block: 0.75rem;
+    }
+    .line {
+        display: block;
+        width: 2.5rem;
+        height: 1px;
+        margin-right: 0.75rem;
+        background-color: var(--clr-link);
+        transition: width 300ms ease;
+    }
+
+    .active .line {
+        width: 5rem;
+        background-color: var(--clr-link-active);
+    }
+
+    .active span {
+        color: var(--clr-link-active);
     }
 </style>
 <script>
