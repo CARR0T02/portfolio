@@ -30,9 +30,19 @@ import Aside from '@components/Home/Aside.astro';
   </body>
 </html>
 <style>
+  main {
+    padding: 0 1.5rem 0 1.5rem;
+    max-width: 500px;
+  }
+
+  #home-grid {
+    padding-top: 48px;
+    display: grid;
+    justify-items: center;
+  }
   @media screen and (min-width: 600px) {
     #home-grid {
-      display: grid;
+      
       grid-template-areas: 
       'main aside'
       'footer footer'
@@ -42,8 +52,6 @@ import Aside from '@components/Home/Aside.astro';
   
     main {
       grid-area: main;
-      padding: 0 1.5rem 0 1.5rem;
-
     }
   }
 </style>
