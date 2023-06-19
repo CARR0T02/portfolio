@@ -114,9 +114,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  padding: 2.5rem 1.5rem;
-}
 
 a {
   color: var(--clr-text-main);

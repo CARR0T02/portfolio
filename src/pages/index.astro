@@ -4,6 +4,7 @@ import About from '@components/Home/About.astro';
 import Projects from '@components/Home/Projects.astro';
 import Contact from '@components/Home/Contact.astro';
 import Experience from '@components/Home/Experience.astro';
+import Aside from '@components/Home/Aside.astro';
 ---
 
 <html lang='en' data-theme='dark'>
@@ -16,12 +17,19 @@ import Experience from '@components/Home/Experience.astro';
   </head>
   <body>
     <MainLayout>
-      <main>
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
+
+        <Aside/>
+        <main>
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
     </MainLayout>
   </body>
 </html>
+<style>
+  .wrapper {
+    padding: 2.5rem 1.5rem;
+  }
+</style>
