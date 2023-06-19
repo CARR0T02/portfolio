@@ -17,19 +17,33 @@ import Aside from '@components/Home/Aside.astro';
   </head>
   <body>
     <MainLayout>
-
-        <Aside/>
-        <main>
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
-        </main>
+        <div id="home-grid">
+          <Aside/>
+          <main>
+            <About />
+            <Experience />
+            <Projects />
+            <Contact />
+          </main>
+        </div>
     </MainLayout>
   </body>
 </html>
 <style>
-  .wrapper {
-    padding: 2.5rem 1.5rem;
+  @media screen and (min-width: 600px) {
+    #home-grid {
+      display: grid;
+      grid-template-areas: 
+      'main aside'
+      'footer footer'
+      ;
+      grid-template-columns: 2fr 1fr;
+    }
+  
+    main {
+      grid-area: main;
+      padding: 0 1.5rem 0 1.5rem;
+
+    }
   }
 </style>

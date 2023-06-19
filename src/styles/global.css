@@ -30,6 +30,11 @@ li {
   list-style-type: none;
 }
 
+h2 {
+  margin: 0;
+  padding-block: 0.83em;
+}
+
 :root {
   --ff-body: serif;
   --ff-heading: serif;

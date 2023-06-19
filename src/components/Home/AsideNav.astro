@@ -1,0 +1,25 @@
+---
+
+---
+<nav id="aside-nav">
+    <ul>
+        <li data-for="about" class="aside-nav-link active">
+            <a class='link ' href='/#about'>About</a>
+        </li>
+        <li data-for="experience" class="aside-nav-link">
+            <a class='' href='/#experience'>Experience</a>
+        </li>
+        <li data-for="projects" class="aside-nav-link">
+            <a class='link' href='/#projects'>Projects</a>
+        </li>
+    </ul>
+</nav>
+<style>
+    .active {
+        background-color: #fff;
+    }
+</style>
+<script>
+   import {handleScroll} from 'src/scripts/asideNavHelper'
+    window.addEventListener('scroll', handleScroll);
+</script>
