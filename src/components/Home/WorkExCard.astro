@@ -5,9 +5,9 @@ const { mdFile } = Astro.props;
 
 <li>
   <a href={mdFile.frontmatter.url}>
-    <div>
+    <div class="card">
       <span>{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span>
-      <header class='link'>
+      <header>
         {mdFile.frontmatter.position} · {mdFile.frontmatter.company}
       </header>
       <mdFile.Content />
@@ -16,14 +16,13 @@ const { mdFile } = Astro.props;
   </a>
 </li>
 <style>
-  li {
-    padding-block: 1rem;
-   
-  }
+
+
 
   @media screen and (max-width: 600px) {
     li  {
       border-bottom: 2px solid var(--clr-main-opaque);
     }
+
   }
 </style>

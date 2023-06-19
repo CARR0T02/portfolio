@@ -84,7 +84,7 @@ h2 {
   --clr-secondary: hsl(172, 70%, 55%);
 }
 
-/* Helpers */
+/* Helpers Start*/
 .flex {
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@ h2 {
     opacity: 1;
   }
 }
-/* Helpers */
+/* Helpers End*/
 
 html {
   scroll-padding-top: 55px;
@@ -141,6 +141,12 @@ svg.small {
   width: 16px;
 }
 
+.card {
+  box-sizing: content-box;
+  text-align: justify;
+  padding-block: 1.5rem;
+}
+
 /* Small screens */
 @media screen and (max-width: 600px) {
   .lg-visible {
@@ -148,13 +154,26 @@ svg.small {
   }
 }
 
-/* Large screens */
+/* Medium screens */
 @media screen and (min-width: 600px) {
   html {
     scroll-padding-top: 100px;
   }
   .lg-hidden {
     display: none;
+  }
+
+
+}
+
+/* Large screens */
+@media screen and (min-width: 1024px) { 
+  section > * {
+    padding-inline: 1rem;
+  }
+
+  ul {
+    padding: 0;
   }
 
   svg.icon:hover {
@@ -165,4 +184,22 @@ svg.small {
     color: var(--clr-link-hover);
     transition: color 300ms ease;
   }
+
+  .card {
+    padding-inline: 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+  .card:hover {
+    color: var(--clr-link-hover);
+    box-shadow: 0 0 20px var(--clr-primary-bg) ;
+    background-color: var(--clr-primary-bg);
+  }
+
+  .cards-ul:hover > :not(*:hover) {
+    opacity: 0.75;
+  }
+
 }

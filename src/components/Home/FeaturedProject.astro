@@ -2,7 +2,7 @@
 const { mdFile } = Astro.props;
 ---
 
-<article>
+<article class="card">
   <h3>{mdFile.frontmatter.title}</h3>
   <p>{mdFile.frontmatter.description}</p>
   <img src={mdFile.frontmatter.imageSrc} alt='' />
@@ -20,11 +20,14 @@ const { mdFile } = Astro.props;
 
   img {
     border-radius: 4px;
+    max-width: 350px;
   }
 
   @media screen and (min-width: 600px) {
     article {
-      flex-direction: row;
+      // flex-direction: row;
     }
   }
+
+
 </style>
