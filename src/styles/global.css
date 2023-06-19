@@ -65,6 +65,8 @@ li {
   --clr-text-main: hsl(212, 17%, 70%);
   --clr-text-alt: hsl(214, 52%, 85%);
 
+  --clr-main-opaque: hsla(212, 17%, 70%, 0.2);
+
   --clr-link: hsl(217, 16%, 68%);
   --clr-link-hover: hsl(217, 16%, 80%);
   --clr-link-active: hsl(0, 0%, 100%);
@@ -77,7 +79,7 @@ li {
   --clr-secondary: hsl(172, 70%, 55%);
 }
 
-/* Helper Classes */
+/* Helpers */
 .flex {
   display: flex;
   align-items: center;
@@ -86,6 +88,19 @@ li {
 .clickable {
   cursor: pointer;
 }
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Helpers */
 
 html {
   scroll-padding-top: 55px;
@@ -140,7 +155,7 @@ svg.small {
     display: none;
   }
 
-  svg:hover {
+  svg.icon:hover {
     fill: var(--clr-link-hover);
   }
 
