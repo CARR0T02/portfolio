@@ -18,5 +18,12 @@ const { mdFile } = Astro.props;
 <style>
   li {
     padding-block: 1rem;
+   
+  }
+
+  @media screen and (max-width: 600px) {
+    li  {
+      border-bottom: 2px solid var(--clr-main-opaque);
+    }
   }
 </style>
