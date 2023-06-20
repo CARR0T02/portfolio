@@ -1,4 +1,5 @@
 ---
+sortOrder: 1
 title: Memory Card Project
 year: 2023
 description: A game to find characters in the picture
