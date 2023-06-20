@@ -9,7 +9,7 @@ const { mdFile } = Astro.props;
     <img src={mdFile.frontmatter.imageSrc} alt='' />
   </a>
 </article>
-<style lang='scss'>
+<style>
   article {
     display: flex;
     flex-direction: column;
@@ -25,11 +25,9 @@ const { mdFile } = Astro.props;
     max-width: 350px;
   }
 
-  @media screen and (min-width: 600px) {
-    article {
-      // flex-direction: row;
+  @media screen and (max-width: 1024px) {
+    article  {
+      border-bottom: 2px solid var(--clr-main-opaque);
     }
   }
-
-
 </style>
