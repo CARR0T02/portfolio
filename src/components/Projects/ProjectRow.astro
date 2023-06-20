@@ -5,7 +5,7 @@ const { project } = Astro.props;
 
 <tr class='link'>
   <th>
-    <a href={project.url} class='link'>
+    <a href={project.url} class='link flex'>
       {project.frontmatter.title}
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -23,7 +23,7 @@ const { project } = Astro.props;
   <td>{project.frontmatter.year}</td>
   <td class='lg-visible'><Tags tags={project.frontmatter.tags} /></td>
   <td class='lg-visible'>
-    <a href={project.url} class='flex'>
+    <a href={project.url}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'

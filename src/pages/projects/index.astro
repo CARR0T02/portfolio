@@ -45,9 +45,15 @@ const projects = await Astro.glob('./*.md');
   </body>
 </html>
 <style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
   .wrapper {
     padding-inline: 1.5rem;
     padding-top: 2rem;
+    flex-grow: 1;
   }
 
   caption {

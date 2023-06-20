@@ -17,14 +17,34 @@ const { frontmatter } = Astro.props;
   </head>
   <body>
     <MainLayout>
-      <Breadcrumb />
-      <main>
-        <h1>
-          {frontmatter.title}
-        </h1>
-        <slot />
-      </main>
+      <div class='wrapper'>
+        <Breadcrumb />
+        <main>
+          <h1>
+            {frontmatter.title}
+          </h1>
+          <slot />
+        </main>
+      </div>
     </MainLayout>
     <Footer />
   </body>
 </html>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    padding-inline: 1.5rem;
+    padding-top: 2rem;
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: 600px) {
+    .wrapper {
+      padding-top: 4rem;
+    }
+  }
+</style>
