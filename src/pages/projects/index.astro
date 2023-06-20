@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import ProjectRow from '@components/Projects/ProjectRow.astro';
 const projects = await Astro.glob('./*.md');
 ---
 
@@ -14,77 +15,48 @@ const projects = await Astro.glob('./*.md');
   </head>
   <body>
     <MainLayout>
-      <Breadcrumb />
-      <main>
-        <table>
-          <caption>Project Archives</caption>
-          <thead>
-            <tr>
-              <th scope='col'>Project</th>
-              <th scope='col'>Year</th>
-              <th scope='col' class='lg-visible'>Built with</th>
-              <th scope='col' class='lg-visible'></th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              projects.map((project) => {
-                return (
-                  <tr>
-                    <th scope='row' class='project-name flex'>
-                      {project.frontmatter.title}
-                      <a href={project.url} class='lg-hidden'>
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          viewBox='0 0 20 20'
-                          fill='currentColor'
-                          class='icon small'
-                        >
-                          <path
-                            fill-rule='evenodd'
-                            d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z'
-                            clip-rule='evenodd'
-                          />
-                        </svg>
-                      </a>
-                    </th>
-                    <td>{project.frontmatter.year}</td>
-                    <td class='lg-visible'>{project.frontmatter.tags}</td>
-                    <td class='lg-visible'>
-                      <a href={project.url}>
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          viewBox='0 0 20 20'
-                          class='icon small'
-                        >
-                          <path
-                            fill-rule='evenodd'
-                            d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z'
-                            clip-rule='evenodd'
-                          />
-                        </svg>
-                      </a>
-                    </td>
-                  </tr>
-                );
-              })
-            }
-          </tbody>
-        </table>
-      </main>
+      <div class='wrapper'>
+        <Breadcrumb />
+        <main>
+          <table>
+            <caption>Project Archives</caption>
+            <thead>
+              <tr>
+                <th scope='col'>Project</th>
+                <th scope='col'>Year</th>
+                <th scope='col' class='lg-visible'>Built with</th>
+                <th scope='col' class='lg-visible'></th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                projects.map((project) => {
+                  return <ProjectRow project={project} />;
+                })
+              }
+            </tbody>
+          </table>
+        </main>
+      </div>
     </MainLayout>
   </body>
 </html>
 <style>
+  .wrapper {
+    padding-inline: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  caption {
+    padding-block: 1.5rem;
+  }
   table {
     width: 100%;
   }
 
-  th {
-    text-align: start;
-  }
-
-  .project-name {
-    gap: 1rem;
+  @media screen and (max-width: 600px) {
+    .wrapper {
+      padding-top: 4rem;
+    }
   }
 </style>

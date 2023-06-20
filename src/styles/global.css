@@ -119,7 +119,6 @@ body {
   min-height: 100vh;
 }
 
-
 a {
   color: var(--clr-text-main);
   text-decoration: none;
@@ -147,6 +146,19 @@ svg.small {
   padding-block: 1.5rem;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: start;
+  padding-block: 1rem;
+}
+
+tr {
+  border-bottom: 1px solid var(--clr-main-opaque);
+}
+
 /* Small screens */
 @media screen and (max-width: 600px) {
   .lg-visible {
@@ -162,12 +174,10 @@ svg.small {
   .lg-hidden {
     display: none;
   }
-
-
 }
 
 /* Large screens */
-@media screen and (min-width: 1024px) { 
+@media screen and (min-width: 1024px) {
   section > * {
     padding-inline: 1rem;
   }
@@ -194,12 +204,11 @@ svg.small {
   }
   .card:hover {
     color: var(--clr-link-hover);
-    box-shadow: 0 0 20px var(--clr-primary-bg) ;
+    box-shadow: 0 0 20px var(--clr-primary-bg);
     background-color: var(--clr-primary-bg);
   }
 
   .cards-ul:hover > :not(*:hover) {
     opacity: 0.75;
   }
-
 }
