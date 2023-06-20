@@ -3,9 +3,11 @@ const { mdFile } = Astro.props;
 ---
 
 <article class="card">
-  <h3>{mdFile.frontmatter.title}</h3>
-  <p>{mdFile.frontmatter.description}</p>
-  <img src={mdFile.frontmatter.imageSrc} alt='' />
+  <a href={mdFile.url}>
+    <h3>{mdFile.frontmatter.title}</h3>
+    <p>{mdFile.frontmatter.description}</p>
+    <img src={mdFile.frontmatter.imageSrc} alt='' />
+  </a>
 </article>
 <style lang='scss'>
   article {
