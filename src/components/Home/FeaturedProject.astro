@@ -1,11 +1,12 @@
 ---
-const { mdFile } = Astro.props;
+const { project } = Astro.props;
+console.log(project.data);
 ---
 
 <article class='card'>
-  <a href={mdFile.url}>
+  <a href={'projects/' + project.slug}>
     <h3 class='flex'>
-      {mdFile.frontmatter.title}
+      {project.data.title}
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'
@@ -18,8 +19,8 @@ const { mdFile } = Astro.props;
           clip-rule='evenodd'></path>
       </svg>
     </h3>
-    <p>{mdFile.frontmatter.description}</p>
-    <img src={mdFile.frontmatter.imageSrc} alt='' />
+    <p>{project.data.description}</p>
+    <img src={project.data.imageSrc} alt='' />
   </a>
 </article>
 <style>

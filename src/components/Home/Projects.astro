@@ -1,16 +1,17 @@
 ---
-import * as featuredProject1 from '@projects/photo-tagging.md';
-import * as featuredProject2 from '@projects/shopping-cart.md';
-import * as featuredProject3 from '@projects/memory-card.md';
 import FeaturedProject from './FeaturedProject.astro';
+import { getEntry } from 'astro:content';
+const featuredProject1 = await getEntry('projects', 'photo-tagging');
+const featuredProject2 = await getEntry('projects', 'shopping-cart');
+const featuredProject3 = await getEntry('projects', 'memory-card');
 ---
 
 <section id='projects'>
   <h2>Projects</h2>
   <ul class='cards-ul'>
-    <FeaturedProject mdFile={featuredProject1} />
-    <FeaturedProject mdFile={featuredProject2} />
-    <FeaturedProject mdFile={featuredProject3} />
+    <FeaturedProject project={featuredProject1} />
+    <FeaturedProject project={featuredProject2} />
+    <FeaturedProject project={featuredProject3} />
   </ul>
   <a href='/projects' class='flex link-container'
     ><span>View Full Project Archive</span><svg

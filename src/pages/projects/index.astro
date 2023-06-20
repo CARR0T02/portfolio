@@ -3,8 +3,9 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ProjectRow from '@components/Projects/ProjectRow.astro';
 import Footer from '@components/Footer.astro';
+import { getCollection } from 'astro:content';
 
-const projects = await Astro.glob('./*.md');
+const projects = await getCollection('projects');
 ---
 
 <html lang='en' data-theme='dark'>
@@ -33,7 +34,12 @@ const projects = await Astro.glob('./*.md');
             <tbody>
               {
                 projects.map((project) => {
-                  return <ProjectRow project={project} />;
+                  return (
+                    <ProjectRow
+                      data={project.data}
+                      url={'projects/' + project.slug}
+                    />
+                  );
                 })
               }
             </tbody>

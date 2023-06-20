@@ -8,7 +8,7 @@
       "@styles/*": ["src/styles/*"],
       "@content/*": ["src/content/*"],
       "@public/*": ["public/"],
-      "@projects/*": ["src/pages/projects/*"]
+      "@projects/*": ["src/content/projects/*"]
     }
   }
 }
