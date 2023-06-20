@@ -1,18 +1,24 @@
 ---
 import AsideNav from './AsideNav.astro';
-import {frontmatter} from '@content/about.md';
-
+import { frontmatter } from '@content/about.md';
 ---
 
-<aside class="lg-visible">
-    <h1>{frontmatter.name}</h1>
-    <p>{frontmatter.currentRole}</p>
-    <AsideNav />
+<aside>
+  <h1>{frontmatter.name}</h1>
+  <p>{frontmatter.currentRole}</p>
+  <AsideNav />
 </aside>
 <style>
+  @media screen and (max-width: 600px) {
     aside {
-         position: sticky;
-         top: 96px;
-         height: fit-content;
+      padding: 4rem 1.5rem 0 1.5rem;
     }
+  }
+  @media screen and (min-width: 600px) {
+    aside {
+      position: sticky;
+      top: 96px;
+      height: fit-content;
+    }
+  }
 </style>
