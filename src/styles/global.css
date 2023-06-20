@@ -73,7 +73,7 @@ h2 {
   --clr-main-opaque: hsla(212, 17%, 70%, 0.2);
 
   --clr-link: hsl(217, 16%, 68%);
-  --clr-link-hover: hsl(217, 16%, 80%);
+  --clr-link-hover: hsl(217, 20%, 85%);
   --clr-link-active: hsl(0, 0%, 100%);
 
   --bgc-main: hsl(227, 15%, 15%);
@@ -116,7 +116,7 @@ body {
   color: var(--clr-text-main);
 
   background: no-repeat fixed
-    repeating-linear-gradient(var(--bgc-alt), var(--bgc-main) 100vh);
+    repeating-linear-gradient(var(--bgc-alt), var(--bgc-main) 110vh);
   min-height: 100vh;
 }
 
