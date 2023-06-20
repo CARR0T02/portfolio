@@ -5,6 +5,7 @@ import Projects from '@components/Home/Projects.astro';
 import Contact from '@components/Home/Contact.astro';
 import Experience from '@components/Home/Experience.astro';
 import Aside from '@components/Home/Aside.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <html lang='en' data-theme='dark'>
@@ -17,15 +18,15 @@ import Aside from '@components/Home/Aside.astro';
   </head>
   <body>
     <MainLayout>
-        <div id="home-grid">
-          <Aside/>
-          <main>
-            <About />
-            <Experience />
-            <Projects />
-            <Contact />
-          </main>
-        </div>
+      <div id='home-grid'>
+        <Aside />
+        <main>
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
     </MainLayout>
   </body>
 </html>
@@ -40,14 +41,12 @@ import Aside from '@components/Home/Aside.astro';
   }
   @media screen and (min-width: 600px) {
     #home-grid {
-      
-      grid-template-areas: 
-      'main aside'
-      'footer footer'
-      ;
+      grid-template-areas:
+        'main aside'
+        'footer footer';
       grid-template-columns: 2fr 1fr;
     }
-  
+
     main {
       grid-area: main;
       max-width: 40vw;
