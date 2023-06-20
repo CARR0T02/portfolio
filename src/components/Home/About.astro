@@ -7,6 +7,8 @@ import Tags from '../Tags.astro';
   <h2>{about.frontmatter.title}</h2>
   <about.Content />
   <h3>Languages I know</h3>
-  <Tags tags={about.frontmatter.languages} />
+  <div>
+    <Tags tags={about.frontmatter.languages} />
+  </div>
   <!-- ! Include resume -->
 </section>
