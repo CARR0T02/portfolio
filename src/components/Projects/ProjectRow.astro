@@ -23,7 +23,7 @@ const { project } = Astro.props;
   <td>{project.frontmatter.year}</td>
   <td class='lg-visible'><Tags tags={project.frontmatter.tags} /></td>
   <td class='lg-visible'>
-    <a href={project.url}>
+    <a href={project.url} class='flex'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'
@@ -37,9 +37,3 @@ const { project } = Astro.props;
     </a>
   </td>
 </tr>
-<style>
-  a {
-    display: flex;
-    gap: 1rem;
-  }
-</style>
