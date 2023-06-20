@@ -49,7 +49,12 @@ import Footer from '@components/Footer.astro';
 
     main {
       grid-area: main;
-      max-width: 40vw;
+      max-width: 60vw;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    main {
+      max-width: 50vw;
     }
   }
 </style>

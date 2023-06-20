@@ -172,13 +172,17 @@ tr {
   html {
     scroll-padding-top: 100px;
   }
-  .lg-hidden {
+  .md-hidden {
     display: none;
   }
 }
 
 /* Large screens */
 @media screen and (min-width: 1024px) {
+  .lg-hidden {
+    display: none;
+  }
+
   section > * {
     padding-inline: 1rem;
   }
