@@ -6,9 +6,11 @@ import Footer from '@components/Footer.astro';
 import { CollectionEntry, getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
-let sortedProjects: Array<CollectionEntry<'projects'>> = [];
+let sortedProjects: Array<CollectionEntry<'projects'>> = new Array(
+  projects.length
+);
 projects.forEach((project) => {
-  sortedProjects.splice(project.data.sortOrder, 0, project);
+  sortedProjects.splice(project.data.sortOrder, 1, project);
 });
 sortedProjects = sortedProjects.reverse();
 ---
