@@ -8,11 +8,11 @@ const featuredProject3 = await getEntry('projects', 'memory-card');
 
 <section id='projects'>
   <h2>Projects</h2>
-  <ul class='cards-ul'>
+  <div class='cards-container'>
     <FeaturedProject project={featuredProject1} />
     <FeaturedProject project={featuredProject2} />
     <FeaturedProject project={featuredProject3} />
-  </ul>
+  </div>
   <a href='/projects' class='flex link-container'
     ><span>View Full Project Archive</span><svg
       xmlns='http://www.w3.org/2000/svg'

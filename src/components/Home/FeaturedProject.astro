@@ -3,7 +3,7 @@ const { project } = Astro.props;
 ---
 
 <article class='card'>
-  <a href={'projects/' + project.slug}>
+  <a href={'projects/' + project.slug} class='link'>
     <h3 class='flex'>
       {project.data.title}
       <svg
