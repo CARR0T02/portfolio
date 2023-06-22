@@ -1,17 +1,17 @@
 ---
-sortOrder: 1
+sortOrder: 9
 title: Memory Card Project
 year: 2023
 description: A game to find characters in the picture
-imageSrc: /assets/test.png
-tags: ['React', 'SCSS']
+imageSrc: /assets/memory-card.webp
+tags: [JavaScript, React, SCSS]
 link:
-  GitHub: https://github.com/CARR0T02/memory-card
-  Live: https://carr0t02.github.io/memory-card/
+  GitHub: https://github.com/GabrielCWT/memory-card
+  Live: https://gabrielcwt.github.io/memory-card/
 ---
 
-This application is to learn React hooks and states. I have again tried to use Sass for the web design.
+This application is to learn React hooks and lifecycle methods. I have again tried to use Sass for the web design.
 
-The aim of the game is to click on cards which have not been previously clicked before.
+The aim of the game is to click on cards which have not been previously clicked before. It has a current score and high score system.
 
-[Live Demo](https://carr0t02.github.io/memory-card/)
+This project is part of The Odin Project, an open source course.

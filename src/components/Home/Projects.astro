@@ -1,6 +1,6 @@
 ---
-import FeaturedProject from './FeaturedProject.astro';
 import { getEntry } from 'astro:content';
+import FeaturedProject from './FeaturedProject.astro';
 const featuredProject1 = await getEntry('projects', 'photo-tagging');
 const featuredProject2 = await getEntry('projects', 'shopping-cart');
 const featuredProject3 = await getEntry('projects', 'memory-card');
