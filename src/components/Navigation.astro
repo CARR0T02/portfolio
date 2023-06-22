@@ -4,8 +4,8 @@
 <nav id='nav-bar'>
   <div class='container flex'>
     <span class='logo'><a href='/'>LOGO</a></span>
-    <button id='toggle-nav' class='md-hidden'>
-      <svg
+    <button id='toggle-nav' class='md-hidden' aria-expanded='false'>
+      <!-- <svg
         xmlns='http://www.w3.org/2000/svg'
         height='48'
         viewBox='0 -960 960 960'
@@ -14,7 +14,23 @@
         ><path
           d='M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z'
         ></path></svg
+      > -->
+      <svg
+        stroke='var(--clr-text-main)'
+        fill='none'
+        class='hamburger'
+        viewBox='-10 -10 120 120'
+        width='250'
       >
+        <path
+          class='line'
+          stroke-width='10'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70'
+        >
+        </path>
+      </svg>
     </button>
   </div>
   <div class='nav-links'>
@@ -52,9 +68,10 @@
 
   button {
     padding: 0;
-    background: none;
+    background: transparent;
     border: none;
   }
+
   @media screen and (max-width: 600px) {
     .nav-links.visible {
       display: flex !important;
@@ -62,7 +79,7 @@
 
     nav {
       position: fixed;
-      padding-inline: 1.5rem;
+      padding: 0.75rem 1.5rem;
     }
 
     .container {
@@ -83,11 +100,31 @@
     .nav-link:last-child {
       padding-bottom: 2rem;
     }
+
     #toggle-nav {
       position: relative;
       margin-left: auto;
       top: 0;
       width: 32px;
+    }
+
+    #toggle-nav .hamburger {
+      transition: translate 1s, rotate 1s;
+    }
+
+    #toggle-nav[aria-expanded='true'] .hamburger {
+      translate: 2px -2px;
+      rotate: 0.125turn;
+    }
+
+    #toggle-nav .line {
+      transition: 1s;
+      stroke-dasharray: 60 31 60 300;
+    }
+
+    #toggle-nav[aria-expanded='true'] .line {
+      stroke-dasharray: 60 105 60 300;
+      stroke-dashoffset: -90;
     }
   }
   @media screen and (min-width: 600px) {
