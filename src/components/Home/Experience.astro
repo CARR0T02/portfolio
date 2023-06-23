@@ -9,7 +9,7 @@ const workExArr = await Astro.glob('../../content/WorkEx/*.md');
   <ul class='cards-container'>
     {workExArr.map((workEx) => <WorkExCard mdFile={workEx} />)}
   </ul>
-  <a href='/#' class='flex link-container'
+  <a href='/resume.pdf' class='flex link-container' target='_blank'
     ><span>View Full Résumé</span><svg
       xmlns='http://www.w3.org/2000/svg'
       height='48'

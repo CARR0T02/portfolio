@@ -4,7 +4,7 @@ const { mdFile } = Astro.props;
 ---
 
 <li>
-  <a href={mdFile.frontmatter.url}>
+  <a href={mdFile.frontmatter.url} target='_blank'>
     <div class='card link'>
       <span>{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span>
       <header class='flex'>
