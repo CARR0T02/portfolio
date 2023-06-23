@@ -51,6 +51,12 @@ import { frontmatter } from '@content/about/about.md';
     display: flex;
     flex-direction: column;
   }
+
+  h1 {
+    font-size: var(--fs-900);
+    margin-block: 2rem 0;
+  }
+
   @media screen and (max-width: 600px) {
     aside {
       padding: 4rem 1.5rem 0 1.5rem;
@@ -60,8 +66,8 @@ import { frontmatter } from '@content/about/about.md';
   @media screen and (min-width: 600px) {
     aside {
       position: sticky;
-      top: 96px;
-      height: calc(100vh - 96px);
+      top: 104px;
+      height: calc(100vh - 104px);
     }
 
     div {
