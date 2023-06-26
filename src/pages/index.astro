@@ -1,20 +1,21 @@
 ---
+import Themes from 'astro-themes';
 import MainLayout from '@layouts/MainLayout.astro';
 import About from '@components/Home/About.astro';
 import Projects from '@components/Home/Projects.astro';
 import Contact from '@components/Home/Contact.astro';
 import Experience from '@components/Home/Experience.astro';
 import Aside from '@components/Home/Aside.astro';
-import Footer from '@components/Footer.astro';
 ---
 
-<html lang='en' data-theme='dark'>
+<html lang='en'>
   <head>
+    <Themes defaultTheme='dark' />
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro</title>
+    <title>Gabriel Chang</title>
   </head>
   <body>
     <MainLayout>
@@ -28,33 +29,34 @@ import Footer from '@components/Footer.astro';
         </main>
       </div>
     </MainLayout>
+    <style>
+      main {
+        padding: 0 1.5rem 0 1.5rem;
+        justify-self: center;
+      }
+
+      #home-grid {
+        display: grid;
+      }
+
+      @media screen and (min-width: 600px) {
+        #home-grid {
+          grid-template-areas:
+            'main aside'
+            'footer footer';
+          grid-template-columns: 2fr 1fr;
+        }
+
+        main {
+          grid-area: main;
+          max-width: 60vw;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        main {
+          max-width: 50vw;
+        }
+      }
+    </style>
   </body>
 </html>
-<style>
-  main {
-    padding: 0 1.5rem 0 1.5rem;
-    justify-self: center;
-  }
-
-  #home-grid {
-    display: grid;
-  }
-  @media screen and (min-width: 600px) {
-    #home-grid {
-      grid-template-areas:
-        'main aside'
-        'footer footer';
-      grid-template-columns: 2fr 1fr;
-    }
-
-    main {
-      grid-area: main;
-      max-width: 60vw;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    main {
-      max-width: 50vw;
-    }
-  }
-</style>

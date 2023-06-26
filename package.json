@@ -13,5 +13,8 @@
     "astro": "^2.6.4",
     "astro-breadcrumbs": "^1.6.0",
     "sass": "^1.63.4"
+  },
+  "devDependencies": {
+    "astro-themes": "^0.2.4"
   }
 }

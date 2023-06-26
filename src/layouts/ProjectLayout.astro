@@ -1,4 +1,5 @@
 ---
+import Themes from 'astro-themes';
 import '@styles/global.css';
 import Tags from '@components/Tags.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
@@ -8,8 +9,9 @@ import Footer from '@components/Footer.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<html lang='en' data-theme='dark'>
+<html lang='en'>
   <head>
+    <Themes defaultTheme='dark' />
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
@@ -33,46 +35,46 @@ const { frontmatter } = Astro.props;
       </div>
     </MainLayout>
     <Footer />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 1.5rem;
+        padding-top: 2rem;
+        flex-grow: 1;
+      }
+
+      main {
+        display: grid;
+      }
+
+      img {
+        justify-self: center;
+        width: 100%;
+        max-width: 800px !important;
+        border-radius: 5px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 600px) {
+        .wrapper {
+          padding-top: 4rem;
+        }
+      }
+      @media screen and (min-width: 600px) {
+        .content {
+          max-width: 65ch;
+          justify-self: center;
+        }
+      }
+    </style>
   </body>
 </html>
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 1.5rem;
-    padding-top: 2rem;
-    flex-grow: 1;
-  }
-
-  main {
-    display: grid;
-  }
-
-  img {
-    justify-self: center;
-    width: 100%;
-    max-width: 800px !important;
-    border-radius: 5px;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  @media screen and (max-width: 600px) {
-    .wrapper {
-      padding-top: 4rem;
-    }
-  }
-  @media screen and (min-width: 600px) {
-    .content {
-      max-width: 65ch;
-      justify-self: center;
-    }
-  }
-</style>
