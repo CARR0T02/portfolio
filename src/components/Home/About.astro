@@ -4,11 +4,44 @@ import Tags from '../Tags.astro';
 ---
 
 <section id='about'>
-  <h2>{about.frontmatter.title}</h2>
+  <!-- <h2>{about.frontmatter.title}</h2> -->
+  <img src={about.frontmatter.img} id='portrait' />
   <about.Content />
   <h3>Languages I know</h3>
   <div>
     <Tags tags={about.frontmatter.languages} />
   </div>
-  <!-- ! Include resume -->
+  <a href='/resume.pdf' class='flex link-container' target='_blank'>
+    <span>View Full Résumé</span>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      height='48'
+      viewBox='0 -960 960 960'
+      width='48'
+      class='icon small'
+    >
+      <path
+        d='m480-160-42-43 247-247H160v-60h525L438-757l42-43 320 320-320 320Z'
+      >
+      </path>
+    </svg>
+  </a>
 </section>
+<style>
+  img {
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+    margin-inline: auto;
+    border-radius: 999rem;
+    padding: 2rem;
+    /* margin-block: 2rem; */
+  }
+
+  @media screen and (min-width: 1024px) {
+    img {
+      width: 400px;
+    }
+  }
+</style>
