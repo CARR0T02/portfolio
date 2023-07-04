@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400&family=Mulish:wght@300&display=swap');
 /* Resets */
 *,
 *::before,
@@ -15,6 +16,7 @@ svg {
 }
 
 ul {
+  margin: 0;
   padding: 0;
 }
 
@@ -32,20 +34,21 @@ li {
 
 h2 {
   margin: 0;
-  padding-block: 0.83em;
 }
 
+/* Reset End */
+
 :root {
-  --ff-body: serif;
-  --ff-heading: serif;
+  --ff-body: 'Mukta', sans-serif;
+  --ff-heading: 'Mulish', sans-serif;
 
   --fs-300: 0.7rem;
   --fs-400: 0.8rem;
   --fs-500: 1rem;
   --fs-600: 1.2rem;
-  --fs-700: 1.5rem;
-  --fs-800: 3rem;
-  --fs-900: 5rem;
+  --fs-700: 1.4rem;
+  --fs-800: 2rem;
+  --fs-900: 2.4rem;
 
   --semi-bold: 600;
   --bold: 800;
@@ -53,22 +56,40 @@ h2 {
 
 /* Light Theme */
 [data-theme='light'] {
-  --clr-text-main: hsl(0, 100%, 50%);
-  --clr-text-alt: hsl(214, 52%, 85%);
+  /* ! Color Scheme 1 */
+  /* --clr-text-main: hsl(185, 93%, 17%);
 
-  --clr-link: hsl(217, 16%, 68%);
-  --clr-link-hover: hsl(217, 16%, 80%);
-  --clr-link-active: hsl(0, 0%, 100%);
+  --clr-main-opaque: hsl(37, 18%, 91%);
 
-  --bgc-main: hsl(0, 0%, 100%);
+  --clr-link: hsl(185, 80%, 22%);
+  --clr-link-hover: hsl(185, 79%, 18%);
+  --clr-link-active: hsl(185, 77%, 7%);
 
-  --clr-primary: hsl(217, 22%, 32%);
-  --clr-secondary: hsl(210, 20%, 22%);
+  --bgc-main-light: hsl(163, 15%, 55%);
+  --bgc-main: #588da1;
+  --bgc-primary: hsla(54, 83%, 77%, 0.1);
+
+  --clr-primary-text: #ebd06f; */
+
+  /* ! Color Scheme 2 */
+  --clr-text-main: #000;
+
+  --clr-main-opaque: hsl(36, 6%, 33%);
+
+  --clr-link: hsl(184, 14%, 21%);
+  --clr-link-hover: hsl(186, 25%, 31%);
+  --clr-link-active: hsl(224, 52%, 39%);
+
+  --bgc-main-light: #f5efe5;
+  --bgc-main: #c7c0b7;
+  --bgc-primary: #5d36a73f;
+
+  --clr-primary-text: #7a4bd1;
+  /* TODO: See if I need secondary clr --clr-secondary: hsl(210, 20%, 22%); */
 }
 /* Dark Theme */
 [data-theme='dark'] {
   --clr-text-main: hsl(212, 17%, 70%);
-  --clr-text-alt: hsl(214, 52%, 85%);
 
   --clr-main-opaque: hsla(212, 17%, 70%, 0.2);
 
@@ -76,11 +97,11 @@ h2 {
   --clr-link-hover: hsl(217, 20%, 85%);
   --clr-link-active: hsl(0, 0%, 100%);
 
+  --bgc-main-light: hsl(210, 25%, 17%);
   --bgc-main: hsl(227, 15%, 15%);
-  --bgc-alt: hsl(210, 25%, 17%);
+  --bgc-primary: hsla(20, 100%, 55%, 0.1);
 
   --clr-primary-text: hsl(20, 100%, 65%);
-  --clr-primary-bg: hsla(20, 100%, 55%, 0.1);
   --clr-secondary: hsl(172, 70%, 55%);
 }
 
@@ -113,11 +134,28 @@ html {
 }
 
 body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-600);
   color: var(--clr-text-main);
 
   background: no-repeat fixed
-    repeating-linear-gradient(var(--bgc-alt), var(--bgc-main) 110vh);
+    repeating-linear-gradient(var(--bgc-main-light), var(--bgc-main) 110vh);
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  letter-spacing: -0.02rem;
+}
+
+h2 {
+  padding-block: 2rem 0;
+}
+
+h3 {
+  font-size: var(--fs-600);
 }
 
 a {
@@ -179,6 +217,10 @@ tr {
 
 /* Large screens */
 @media screen and (min-width: 1024px) {
+  h3 {
+    font-size: var(--fs-700);
+  }
+
   .lg-hidden {
     display: none;
   }
@@ -187,7 +229,7 @@ tr {
     padding-inline: 1rem;
   }
 
-  ul {
+  .cards-container {
     padding: 0;
   }
 
@@ -208,12 +250,12 @@ tr {
     cursor: pointer;
   }
   .card:hover {
-    color: var(--clr-link-hover);
-    box-shadow: 0 0 20px var(--clr-primary-bg);
-    background-color: var(--clr-primary-bg);
+    /* box-shadow: 0 0 20px var(--bgc-primary);
+    background-color: var(--bgc-primary); */
+    background-color: hsla(0, 0%, 60%, 0.1);
   }
 
-  .cards-ul:hover > :not(*:hover) {
+  .cards-container:hover > :not(*:hover) {
     transition: opacity 300ms ease;
     opacity: 0.6;
   }
