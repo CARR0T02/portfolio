@@ -3,7 +3,7 @@ import { frontmatter } from '@content/about/about.md';
 ---
 
 <footer class='flex'>
-  <p>&copy Copyright 2023. Made by Gabriel Chang</p>
+  <p>&copy Copyright 2023. Made by {frontmatter.name}</p>
   <a href={frontmatter.links.github} target='_blank'>
     <svg
       xmlns='http://www.w3.org/2000/svg'
