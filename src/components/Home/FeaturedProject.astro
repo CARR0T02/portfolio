@@ -18,8 +18,10 @@ const { project } = Astro.props;
           clip-rule='evenodd'></path>
       </svg>
     </h3>
-    <p>{project.data.description}</p>
-    <img src={project.data.imageSrc} alt='' />
+    <div class='container'>
+      <p>{project.data.description}</p>
+      <img src={project.data.imageSrc} alt='' />
+    </div>
   </a>
 </article>
 <style>
@@ -44,6 +46,17 @@ const { project } = Astro.props;
   @media screen and (max-width: 1024px) {
     article {
       border-bottom: 2px solid var(--clr-main-opaque);
+    }
+
+    .container {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .container {
+      display: flex;
+      gap: 1rem;
     }
   }
 </style>
