@@ -11,7 +11,11 @@ import Tags from '../Tags.astro';
   <div>
     <Tags tags={about.frontmatter.languages} />
   </div>
-  <a href='/resume.pdf' class='flex link-container' target='_blank'>
+  <a
+    href='/resume.pdf'
+    class='flex link-container resume-container'
+    target='_blank'
+  >
     <span>View Full Résumé</span>
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -29,14 +33,21 @@ import Tags from '../Tags.astro';
 </section>
 <style>
   img {
+    object-fit: cover;
     width: 300px;
     aspect-ratio: 1 / 1;
-    object-fit: cover;
     object-position: top;
     margin-inline: auto;
     border-radius: 999rem;
     padding: 2rem;
-    /* margin-block: 2rem; */
+  }
+
+  .resume-container {
+    padding-top: 2rem;
+  }
+
+  #portrait {
+    animation: slide-down 1s ease;
   }
 
   @media screen and (min-width: 1024px) {
