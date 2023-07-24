@@ -166,8 +166,12 @@ p {
 svg {
   aspect-ratio: 1/1;
 }
-
+.icon {
+  height: 40px;
+  width: 40px;
+}
 svg.icon {
+  color: var(--clr-link);
   fill: var(--clr-link);
 }
 
@@ -234,6 +238,7 @@ tr {
   }
 
   svg.icon:hover {
+    color: var(--clr-link-hover);
     fill: var(--clr-link-hover);
   }
 
