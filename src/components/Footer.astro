@@ -27,4 +27,14 @@ import { Icon } from 'astro-icon';
   #icon-container {
     gap: 1rem;
   }
+
+  @media screen and (max-width: 600px) {
+    footer {
+      flex-direction: column;
+    }
+
+    footer > * {
+      margin: 0.5rem;
+    }
+  }
 </style>
