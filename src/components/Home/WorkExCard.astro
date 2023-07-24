@@ -3,11 +3,13 @@ import Tags from '@components/Tags.astro';
 const { mdFile } = Astro.props;
 ---
 
-<li>
+<li class='card link'>
   <a href={mdFile.frontmatter.url} target='_blank'>
-    <div class='card link'>
-      <span>{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span>
-      <header class='flex'>
+    <div>
+      <span class='link'
+        >{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span
+      >
+      <header class='flex link'>
         {mdFile.frontmatter.position} · {mdFile.frontmatter.company}
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -30,6 +32,13 @@ const { mdFile } = Astro.props;
   @media screen and (max-width: 1024px) {
     li {
       border-bottom: 2px solid var(--clr-main-opaque);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    div:hover > .link {
+      color: var(--clr-link-hover);
+      transition: color 300ms ease;
     }
   }
 </style>

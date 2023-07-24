@@ -3,7 +3,7 @@ import Tags from '@components/Tags.astro';
 const { data, url } = Astro.props;
 ---
 
-<tr class='link'>
+<tr>
   <th>
     <a href={url} class='link flex'>
       {data.title}
@@ -20,10 +20,10 @@ const { data, url } = Astro.props;
       </svg>
     </a>
   </th>
-  <td>{data.year}</td>
+  <td><a href={url}>{data.year}</a></td>
   <td class='lg-visible'><Tags tags={data.tags} /></td>
   <td class='lg-visible'>
-    <a href={data.slug}>
+    <a href={url}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'
@@ -37,3 +37,12 @@ const { data, url } = Astro.props;
     </a>
   </td>
 </tr>
+<style>
+  tr:hover a {
+    color: var(--clr-link-hover);
+  }
+
+  tr:hover svg {
+    fill: var(--clr-link-hover);
+  }
+</style>
