@@ -3,10 +3,11 @@ import { BsChevronDown as Next, BsChevronUp as Prev } from 'react-icons/bs';
 import './Carousel.css';
 
 const VerticalCarousel = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const dataLength = data.length;
 
+  const [activeIndex, setActiveIndex] = useState(dataLength - 1);
   // Used to determine which items appear above the active item
-  const halfwayIndex = Math.ceil(data.length / 2);
+  const halfwayIndex = Math.ceil(dataLength / 2);
 
   // Usd to determine the height/spacing of each item
   const itemHeight = 70;
@@ -23,31 +24,12 @@ const VerticalCarousel = ({ data }) => {
     else {
       return (itemIndex - activeIndex) * itemHeight;
     }
-
-    if (itemIndex >= halfwayIndex) {
-      if (activeIndex > itemIndex - halfwayIndex) {
-        return (itemIndex - activeIndex) * itemHeight;
-      } else {
-        return -(data.length + activeIndex - itemIndex) * itemHeight;
-      }
-    }
-
-    if (itemIndex > activeIndex) {
-      return (itemIndex - activeIndex) * itemHeight;
-    }
-
-    if (itemIndex < activeIndex) {
-      if ((activeIndex - itemIndex) * itemHeight >= shuffleThreshold) {
-        return (data.length - (activeIndex - itemIndex)) * itemHeight;
-      }
-      return -(activeIndex - itemIndex) * itemHeight;
-    }
   };
 
   const handleClick = (direction) => {
     setActiveIndex((prevIndex) => {
       if (direction === 'next') {
-        if (prevIndex + 1 > data.length - 1) {
+        if (prevIndex + 1 > dataLength - 1) {
           return prevIndex;
         }
         return prevIndex + 1;
@@ -64,11 +46,14 @@ const VerticalCarousel = ({ data }) => {
 
   return (
     <div className='container'>
-      <section className='outer-container'>
+      <article className='outer-container'>
         <div className='carousel-wrapper'>
           <button
             type='button'
-            className='carousel-button prev clickable'
+            className={`carousel-button prev ${
+              activeIndex > 0 ? 'clickable' : 'transparent'
+            }`}
+            disabled={activeIndex <= 0}
             onClick={() => handleClick('prev')}
           >
             <Prev />
@@ -82,10 +67,11 @@ const VerticalCarousel = ({ data }) => {
                     type='button'
                     onClick={() => setActiveIndex(i)}
                     className={`carousel-item clickable ${
-                      activeIndex === i && 'active'
+                      activeIndex === i ? 'active' : ''
                     } ${Math.abs(
-                      determinePlacement(i) <= visibleStyleThreshold &&
-                        'visible'
+                      determinePlacement(i) <= visibleStyleThreshold
+                        ? 'visible'
+                        : ''
                     )}`}
                     key={i}
                     style={{
@@ -106,7 +92,10 @@ const VerticalCarousel = ({ data }) => {
 
           <button
             type='button'
-            className='carousel-button next clickable'
+            className={`carousel-button next ${
+              activeIndex < dataLength - 1 ? 'clickable' : 'transparent'
+            }`}
+            disabled={activeIndex >= dataLength}
             onClick={() => handleClick('next')}
           >
             <Next />
@@ -115,7 +104,7 @@ const VerticalCarousel = ({ data }) => {
         <div className='content'>
           <p>{data[activeIndex].body}</p>
         </div>
-      </section>
+      </article>
     </div>
   );
 };

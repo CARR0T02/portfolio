@@ -3,6 +3,10 @@
   --orange: #f36c00;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 .outer-container {
   max-width: 800px;
   margin: auto;
