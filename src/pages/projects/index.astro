@@ -6,7 +6,9 @@ import ProjectRow from '@components/Projects/ProjectRow.astro';
 import Footer from '@components/Footer.astro';
 import { CollectionEntry, getCollection } from 'astro:content';
 
-const projects = await getCollection('projects');
+const projects: Array<CollectionEntry<'projects'>> = await getCollection(
+  'projects'
+);
 let sortedProjects: Array<CollectionEntry<'projects'>> = new Array(
   projects.length
 );

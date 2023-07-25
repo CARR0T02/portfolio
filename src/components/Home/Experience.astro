@@ -1,11 +1,23 @@
 ---
+import VerticalCarousel from '../Carousel/VerticalCarousel';
 import WorkExCard from './WorkExCard.astro';
-const workExArr = await Astro.glob('../../content/WorkEx/*.md');
+import { CollectionEntry, getCollection } from 'astro:content';
+const workExArr: Array<CollectionEntry<'WorkEx'>> = await getCollection(
+  'WorkEx'
+);
+
+let sortedWorkExArr: Array<CollectionEntry<'WorkEx'>> = new Array(
+  workExArr.length
+);
+workExArr.forEach((workEx) => {
+  sortedWorkExArr.splice(workEx.data.sortOrder, 1, workEx);
+});
+sortedWorkExArr = sortedWorkExArr.reverse();
 ---
 
 <section id='experience'>
   <h2>Experience</h2>
-
+  <VerticalCarousel data={workExArr} client:load />
   <ul class='cards-container'>
     {workExArr.map((workEx) => <WorkExCard mdFile={workEx} />)}
   </ul>

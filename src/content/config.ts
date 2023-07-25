@@ -21,6 +21,7 @@ const projects = defineCollection({
 const WorkEx = defineCollection({
   type: 'content',
   schema: z.object({
+    sortOrder: z.number(),
     position: z.string(),
     company: z.string(),
     url: z.string(),
