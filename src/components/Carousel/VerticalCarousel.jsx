@@ -6,17 +6,9 @@ const VerticalCarousel = ({ data }) => {
   const dataLength = data.length;
 
   const [activeIndex, setActiveIndex] = useState(dataLength - 1);
-  // Used to determine which items appear above the active item
-  const halfwayIndex = Math.ceil(dataLength / 2);
 
-  // Usd to determine the height/spacing of each item
-  const itemHeight = 70;
-
-  // Used to determine at what point an item is moved from the top to the bottom
-  const shuffleThreshold = halfwayIndex * itemHeight;
-
-  // Used to determine which items should be visible. this prevents the "ghosting" animation
-  const visibleStyleThreshold = shuffleThreshold / 2;
+  // Used to determine the height/spacing of each item
+  const itemHeight = 100;
 
   const determinePlacement = (itemIndex) => {
     // If these match, the item is active
@@ -68,11 +60,7 @@ const VerticalCarousel = ({ data }) => {
                     onClick={() => setActiveIndex(i)}
                     className={`carousel-item clickable ${
                       activeIndex === i ? 'active' : ''
-                    } ${Math.abs(
-                      determinePlacement(i) <= visibleStyleThreshold
-                        ? 'visible'
-                        : ''
-                    )}`}
+                    }`}
                     key={i}
                     style={{
                       transform: `translateY(${determinePlacement(i)}px)`,
