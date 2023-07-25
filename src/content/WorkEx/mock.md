@@ -1,5 +1,5 @@
 ---
-sortOrder: 1
+sortOrder: 0
 position: Full Stack Developer
 company: Apple
 # Tools Used
