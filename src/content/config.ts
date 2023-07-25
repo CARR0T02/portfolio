@@ -18,6 +18,19 @@ const projects = defineCollection({
   }),
 });
 
+const WorkEx = defineCollection({
+  type: 'content',
+  schema: z.object({
+    position: z.string(),
+    company: z.string(),
+    url: z.string(),
+    tags: z.array(z.string()),
+    start: z.string(),
+    end: z.string(),
+  }),
+});
+
 export const collections = {
   projects,
+  WorkEx,
 };

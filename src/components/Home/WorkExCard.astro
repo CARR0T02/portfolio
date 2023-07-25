@@ -1,21 +1,24 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import Tags from '@components/Tags.astro';
+interface Props {
+  mdFile: CollectionEntry<'WorkEx'>;
+}
 const { mdFile } = Astro.props;
+const { Content } = await mdFile.render();
 ---
 
 <li class='card link'>
-  <a href={mdFile.frontmatter.url} target='_blank'>
+  <a href={mdFile.data.url} target='_blank'>
     <div>
-      <span class='link'
-        >{mdFile.frontmatter.start} — {mdFile.frontmatter.end}</span
-      >
+      <span class='link'>{mdFile.data.start} — {mdFile.data.end}</span>
       <header class='flex link'>
-        {mdFile.frontmatter.position} · {mdFile.frontmatter.company}
+        {mdFile.data.position} · {mdFile.data.company}
         <Icon name='radix-icons:arrow-top-right' class='icon small lg-hidden' />
       </header>
-      <mdFile.Content />
-      <Tags tags={mdFile.frontmatter.tags} />
+      <Content />
+      <Tags tags={mdFile.data.tags} />
     </div>
   </a>
 </li>
