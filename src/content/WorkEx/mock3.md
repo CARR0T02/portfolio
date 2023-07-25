@@ -10,4 +10,4 @@ start: May
 end: Aug 2023
 ---
 
-Here is where I am to put my work experience and what I did. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula viverra lacus, vel hendrerit purus egestas semper. Integer viverra quam.
+Mock text 3. I did something in full stack development which was very eventful.
