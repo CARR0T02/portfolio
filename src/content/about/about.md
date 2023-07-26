@@ -3,9 +3,9 @@ title: About Me
 name: Gabriel Chang
 currentRole: Year 1 Undergraduate at NUS
 languages: [CSS, HTML, JavaScript, Python, SCSS]
-library-frameworks: [Astro, Bulma, Flowbite, React, Tailwind]
+library-frameworks: [Astro, Bulma, Flowbite, NodeJS, React, Tailwind]
 tools: [Express, Firebase, Git, GitHub, Jest, MongoDB, Webpack]
-img: /assets/portrait.jpg
+img: /assets/portrait.webp
 links:
   github: 'https://github.com/GabrielCWT'
   linkedin: 'https://www.linkedin.com/in/gabriel-chang-weng-tang/'
