@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import { BsChevronDown as Next, BsChevronUp as Prev } from 'react-icons/bs';
+import CarouselItem from './CarouselItem';
 import './Carousel.css';
 
 const VerticalCarousel = ({ data }) => {
   const dataLength = data.length;
 
   const [activeIndex, setActiveIndex] = useState(dataLength - 1);
-
-  // Used to determine the height/spacing of each item
-  const itemHeight = 100;
-
-  const determinePlacement = (itemIndex) => {
-    // If these match, the item is active
-    if (activeIndex === itemIndex) return 0;
-    else {
-      return (itemIndex - activeIndex) * itemHeight;
-    }
-  };
 
   const handleClick = (direction) => {
     setActiveIndex((prevIndex) => {
@@ -55,24 +45,12 @@ const VerticalCarousel = ({ data }) => {
             <div className='slides'>
               <div className='carousel-inner'>
                 {data.map((experience, i) => (
-                  <button
-                    type='button'
-                    onClick={() => setActiveIndex(i)}
-                    className={`carousel-item clickable ${
-                      activeIndex === i ? 'active' : ''
-                    }`}
+                  <CarouselItem
+                    experience={experience}
+                    index={i}
+                    activeIndex={activeIndex}
                     key={i}
-                    style={{
-                      transform: `translateY(${determinePlacement(i)}px)`,
-                    }}
-                  >
-                    <span>
-                      {experience.data.start} — {experience.data.end}
-                    </span>
-                    <header>
-                      {experience.data.company} · {experience.data.position}
-                    </header>
-                  </button>
+                  />
                 ))}
               </div>
             </div>
