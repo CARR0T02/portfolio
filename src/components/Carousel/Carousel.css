@@ -22,7 +22,7 @@
   height: clamp(340px, 70vw, 400px);
 }
 
-.carousel .carousel__wrapper {
+.carousel__wrapper {
   background: var(--bgc-carousel-left);
   display: flex;
   flex-direction: column;
@@ -36,8 +36,13 @@
   line-height: 1.3;
 }
 
-.carousel .carousel__content {
+.carousel__content-container {
   background: var(--bgc-carousel-right);
+  display: grid;
+}
+
+.carousel__tags {
+  align-self: end;
 }
 
 .carousel__inner {

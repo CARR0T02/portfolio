@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BsChevronDown as Next, BsChevronUp as Prev } from 'react-icons/bs';
 import CarouselItem from './CarouselItem';
+import CarouselTags from './CarouselTags';
 import './Carousel.css';
 
 const VerticalCarousel = ({ data }) => {
@@ -65,8 +66,9 @@ const VerticalCarousel = ({ data }) => {
           <Next />
         </button>
       </div>
-      <div className='carousel__content'>
+      <div className='carousel__content-container'>
         <p>{data[activeIndex].body}</p>
+        <CarouselTags tools={data[activeIndex].data.tags} />
       </div>
     </article>
   );
