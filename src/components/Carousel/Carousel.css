@@ -51,7 +51,7 @@
   padding: 10px;
   max-width: 50px;
   aspect-ratio: 1 / 1;
-  border-radius: 999vw;
+  border-radius: 50%;
   background: var(--bgc-carousel-left);
   border: 2px solid var(--bgc-carousel-right);
 }
@@ -77,6 +77,8 @@
   background: none;
   border: none;
   margin: 0;
+  padding: 0;
+  width: 100%;
   /* carousel__slide-container / 2 - height / 2*/
   top: 61px;
   transition: transform 0.4s ease;
@@ -109,6 +111,43 @@
     var(--bgc-carousel-left) 0%,
     hsla(0, 0%, 100%, 0) 100%
   );
+}
+
+/* Timeline effect */
+.carousel__inner {
+  position: relative;
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 100%;
+}
+
+.carousel-item {
+  border-left: 1px solid #fff;
+}
+
+.carousel-item::before {
+  --_outline-radius: 0.25rem;
+  --_point-size: 0.5rem;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-55%, -50%);
+  outline: var(--_outline-radius) solid #ffffff70;
+  width: var(--_point-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.carousel-item:last-child {
+  border-left: 1px solid;
+  border-image: linear-gradient(to bottom, #fff 50%, transparent 50%) 1;
+}
+
+.carousel-item:first-child {
+  border-left: 1px solid;
+  border-image: linear-gradient(to top, #fff 50%, transparent 50%) 1;
 }
 
 @media screen and (min-width: 1024px) {
