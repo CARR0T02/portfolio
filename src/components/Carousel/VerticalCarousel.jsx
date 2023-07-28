@@ -40,19 +40,16 @@ const VerticalCarousel = ({ data }) => {
         >
           <Prev />
         </button>
-
-        <div className='carousel__inner'>
-          <div className='carousel__slide-container'>
-            {data.map((experience, i) => (
-              <CarouselItem
-                experience={experience}
-                index={i}
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
-                key={i}
-              />
-            ))}
-          </div>
+        <div className='carousel__slide-container'>
+          {data.map((experience, i) => (
+            <CarouselItem
+              experience={experience}
+              index={i}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+              key={i}
+            />
+          ))}
         </div>
 
         <button

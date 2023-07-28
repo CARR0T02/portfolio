@@ -13,7 +13,7 @@
   display: grid;
   border-radius: 5px;
   box-shadow: 1px 3px 6px hsla(0, 0%, 0%, 0.3);
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .carousel > div {
@@ -45,13 +45,6 @@
   align-self: end;
 }
 
-.carousel__inner {
-  height: 100%;
-  display: flex;
-  flex: 5;
-  align-items: center;
-}
-
 .carousel__button {
   display: flex;
   align-self: center;
@@ -74,11 +67,22 @@
 .carousel__slide-container {
   position: relative;
   max-height: 200px;
-  height: 250px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
+.carousel-item {
+  position: absolute;
+  background: none;
+  border: none;
+  margin: 0;
+  /* carousel__slide-container / 2 - height / 2*/
+  top: 61px;
+  transition: transform 0.4s ease;
+}
+
+/* Fading effect for carousel */
 .carousel__slide-container::before,
 .carousel__slide-container::after {
   content: '';
@@ -105,19 +109,6 @@
     var(--bgc-carousel-left) 0%,
     hsla(0, 0%, 100%, 0) 100%
   );
-}
-
-.carousel-item {
-  position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  height: 78px;
-  /* carousel__slide-container / 2 - height / 2*/
-
-  top: 61px;
-  transition: transform 0.4s ease;
 }
 
 @media screen and (min-width: 1024px) {

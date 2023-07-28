@@ -21,6 +21,7 @@ function CarouselItem({ experience, index, activeIndex, setActiveIndex }) {
       className={`carousel-item clickable`}
       style={{
         transform: `translateY(${determinePlacement(index)}px)`,
+        height: `${itemHeight}px`,
       }}
     >
       <span>
