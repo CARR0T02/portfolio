@@ -27,51 +27,49 @@ const VerticalCarousel = ({ data }) => {
   };
 
   return (
-    <div className='container'>
-      <article className='outer-container'>
-        <div className='carousel-wrapper'>
-          <button
-            type='button'
-            className={`carousel-button prev ${
-              activeIndex > 0 ? 'clickable' : 'transparent'
-            }`}
-            disabled={activeIndex <= 0}
-            onClick={() => handleClick('prev')}
-          >
-            <Prev />
-          </button>
+    <article className='outer-container'>
+      <div className='carousel-wrapper'>
+        <button
+          type='button'
+          className={`carousel-button prev ${
+            activeIndex > 0 ? 'clickable' : 'transparent'
+          }`}
+          disabled={activeIndex <= 0}
+          onClick={() => handleClick('prev')}
+        >
+          <Prev />
+        </button>
 
-          <div className='carousel'>
-            <div className='slides'>
-              <div className='carousel-inner'>
-                {data.map((experience, i) => (
-                  <CarouselItem
-                    experience={experience}
-                    index={i}
-                    activeIndex={activeIndex}
-                    key={i}
-                  />
-                ))}
-              </div>
+        <div className='carousel'>
+          <div className='slides'>
+            <div className='carousel-inner'>
+              {data.map((experience, i) => (
+                <CarouselItem
+                  experience={experience}
+                  index={i}
+                  activeIndex={activeIndex}
+                  key={i}
+                />
+              ))}
             </div>
           </div>
+        </div>
 
-          <button
-            type='button'
-            className={`carousel-button next ${
-              activeIndex < dataLength - 1 ? 'clickable' : 'transparent'
-            }`}
-            disabled={activeIndex >= dataLength}
-            onClick={() => handleClick('next')}
-          >
-            <Next />
-          </button>
-        </div>
-        <div className='content'>
-          <p>{data[activeIndex].body}</p>
-        </div>
-      </article>
-    </div>
+        <button
+          type='button'
+          className={`carousel-button next ${
+            activeIndex < dataLength - 1 ? 'clickable' : 'transparent'
+          }`}
+          disabled={activeIndex >= dataLength}
+          onClick={() => handleClick('next')}
+        >
+          <Next />
+        </button>
+      </div>
+      <div className='content'>
+        <p>{data[activeIndex].body}</p>
+      </div>
+    </article>
   );
 };
 

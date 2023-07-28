@@ -10,7 +10,7 @@
 
 .outer-container {
   margin: auto;
-  display: flex;
+  display: grid;
   border-radius: 5px;
   box-shadow: 1px 3px 6px hsla(0, 0%, 0%, 0.3);
   overflow: hidden;
@@ -19,6 +19,7 @@
 .outer-container > div {
   flex: 1;
   padding: 20px;
+  height: clamp(340px, 70vw, 400px);
 }
 
 .outer-container .carousel-wrapper {
@@ -51,7 +52,8 @@
   align-self: center;
   padding: 10px;
   max-width: 50px;
-  border-radius: 30px;
+  aspect-ratio: 1 / 1;
+  border-radius: 999vw;
   background: var(--bgc-carousel-left);
   border: 2px solid var(--bgc-carousel-right);
 }
@@ -71,7 +73,7 @@
 
 .carousel-inner {
   position: relative;
-  max-height: 250px;
+  max-height: 200px;
   height: 250px;
 }
 
@@ -81,7 +83,7 @@
   z-index: 1;
   position: absolute;
   width: 100%;
-  height: 110px;
+  height: 50px;
   pointer-events: none;
 }
 
@@ -110,7 +112,27 @@
   padding: 0;
   margin: 0;
   height: 78px;
-  /* Half of carousel width */
-  top: 86px;
+  /* Carousel-inner / 2 - height / 2*/
+
+  top: 61px;
   transition: transform 0.4s ease;
+}
+
+@media screen and (min-width: 1024px) {
+  .outer-container {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+  .carousel-inner {
+    max-height: 250px;
+  }
+
+  .carousel-inner::before,
+  .carousel-inner::after {
+    height: 110px;
+  }
+
+  .carousel-item {
+    top: 86px;
+  }
 }
