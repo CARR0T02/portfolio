@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Carousel.css';
 
-function CarouselItem({ experience, index, activeIndex }) {
+function CarouselItem({ experience, index, activeIndex, setActiveIndex }) {
   // Used to determine the height/spacing of each item
   const itemHeight = 100;
 
@@ -18,9 +18,7 @@ function CarouselItem({ experience, index, activeIndex }) {
     <button
       type='button'
       onClick={() => setActiveIndex(index)}
-      className={`carousel-item clickable ${
-        activeIndex === index ? 'active' : ''
-      }`}
+      className={`carousel-item clickable`}
       style={{
         transform: `translateY(${determinePlacement(index)}px)`,
       }}

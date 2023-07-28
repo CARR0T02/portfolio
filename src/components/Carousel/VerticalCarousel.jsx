@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BsChevronDown as Next, BsChevronUp as Prev } from 'react-icons/bs';
 import CarouselItem from './CarouselItem';
 import './Carousel.css';
@@ -27,11 +27,11 @@ const VerticalCarousel = ({ data }) => {
   };
 
   return (
-    <article className='outer-container'>
-      <div className='carousel-wrapper'>
+    <article className='carousel'>
+      <div className='carousel__wrapper'>
         <button
           type='button'
-          className={`carousel-button prev ${
+          className={`carousel__button prev ${
             activeIndex > 0 ? 'clickable' : 'transparent'
           }`}
           disabled={activeIndex <= 0}
@@ -40,24 +40,23 @@ const VerticalCarousel = ({ data }) => {
           <Prev />
         </button>
 
-        <div className='carousel'>
-          <div className='slides'>
-            <div className='carousel-inner'>
-              {data.map((experience, i) => (
-                <CarouselItem
-                  experience={experience}
-                  index={i}
-                  activeIndex={activeIndex}
-                  key={i}
-                />
-              ))}
-            </div>
+        <div className='carousel__inner'>
+          <div className='carousel__slide-container'>
+            {data.map((experience, i) => (
+              <CarouselItem
+                experience={experience}
+                index={i}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                key={i}
+              />
+            ))}
           </div>
         </div>
 
         <button
           type='button'
-          className={`carousel-button next ${
+          className={`carousel__button next ${
             activeIndex < dataLength - 1 ? 'clickable' : 'transparent'
           }`}
           disabled={activeIndex >= dataLength}
@@ -66,7 +65,7 @@ const VerticalCarousel = ({ data }) => {
           <Next />
         </button>
       </div>
-      <div className='content'>
+      <div className='carousel__content'>
         <p>{data[activeIndex].body}</p>
       </div>
     </article>
