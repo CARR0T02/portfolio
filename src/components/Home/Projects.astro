@@ -9,7 +9,7 @@ const featuredProject3 = await getEntry('projects', 'memory-card');
 
 <section id='projects'>
   <h2>Projects</h2>
-  <div class='cards-container'>
+  <div class='card-container'>
     <FeaturedProject project={featuredProject1} />
     <FeaturedProject project={featuredProject2} />
     <FeaturedProject project={featuredProject3} />
@@ -19,3 +19,18 @@ const featuredProject3 = await getEntry('projects', 'memory-card');
     <Icon name='ph:arrow-right-bold' class='icon small' />
   </a>
 </section>
+<style>
+  .card-container {
+    display: grid;
+  }
+  @media screen and (min-width: 1024px) {
+    .card-container {
+      padding: 0;
+    }
+
+    .card-container:hover > :not(*:hover) {
+      transition: opacity 300ms ease;
+      opacity: 0.6;
+    }
+  }
+</style>
