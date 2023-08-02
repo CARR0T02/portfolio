@@ -5,22 +5,28 @@ import { Icon } from 'astro-icon';
 ---
 
 <section id='about'>
-  <img src={about.frontmatter.img} id='portrait' />
-  <about.Content />
-  <h3>Languages I know</h3>
-  <div>
-    <Tags tags={about.frontmatter.languages} />
+  <div aria-hidden class='section-container'>
+    <img src={about.frontmatter.img} id='portrait' />
+    <about.Content />
+    <h3>Languages I know</h3>
+    <div>
+      <Tags tags={about.frontmatter.languages} />
+    </div>
+    <a
+      href='/resume.pdf'
+      class='flex link-container resume-container'
+      target='_blank'
+    >
+      <span class='resume'>View Full Résumé</span>
+      <Icon name='ph:arrow-right-bold' class='icon small' />
+    </a>
   </div>
-  <a
-    href='/resume.pdf'
-    class='flex link-container resume-container'
-    target='_blank'
-  >
-    <span>View Full Résumé</span>
-    <Icon name='ph:arrow-right-bold' class='icon small' />
-  </a>
 </section>
 <style>
+  section {
+    min-height: 90vh;
+  }
+
   img {
     object-fit: cover;
     width: 300px;
@@ -32,7 +38,11 @@ import { Icon } from 'astro-icon';
   }
 
   .resume-container {
-    padding-top: 2rem;
+    padding-top: 3rem;
+  }
+
+  .resume {
+    font-size: 20px;
   }
 
   #portrait {
@@ -41,7 +51,7 @@ import { Icon } from 'astro-icon';
 
   @media screen and (min-width: 1024px) {
     img {
-      width: 400px;
+      width: clamp(420px, 25vw, 550px);
     }
   }
 </style>

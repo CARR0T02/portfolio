@@ -142,11 +142,17 @@ h3 {
 }
 
 h2 {
-  padding-block: 0.5rem;
+  padding-block: 4rem;
 }
 
 h3 {
   font-size: var(--fs-600);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 a {
@@ -227,6 +233,9 @@ tr {
 
 /* Large screens */
 @media screen and (min-width: 1024px) {
+  h2 {
+    font-size: var(--fs-800);
+  }
   h3 {
     font-size: var(--fs-700);
   }

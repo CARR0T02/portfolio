@@ -54,6 +54,7 @@
   border-radius: 10px;
   background: var(--bgc-carousel-left);
   border: 2px solid var(--bgc-carousel-right);
+  color: var(--clr-carousel-lead);
 }
 
 .carousel__button svg {
@@ -134,6 +135,7 @@
 
 .carousel-item {
   border-left: 1px solid #fff;
+  text-wrap: balance;
 }
 
 .carousel-item::before {

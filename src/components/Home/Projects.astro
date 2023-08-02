@@ -8,16 +8,18 @@ const featuredProject3 = await getEntry('projects', 'memory-card');
 ---
 
 <section id='projects'>
-  <h2>Projects</h2>
-  <div class='card-container'>
-    <FeaturedProject project={featuredProject1} />
-    <FeaturedProject project={featuredProject2} />
-    <FeaturedProject project={featuredProject3} />
+  <div aria-hidden class='section-container'>
+    <h2>Projects</h2>
+    <div class='card-container'>
+      <FeaturedProject project={featuredProject1} />
+      <FeaturedProject project={featuredProject2} />
+      <FeaturedProject project={featuredProject3} />
+    </div>
+    <a href='/projects' class='flex link-container'>
+      <span>View Full Project Archive</span>
+      <Icon name='ph:arrow-right-bold' class='icon small' />
+    </a>
   </div>
-  <a href='/projects' class='flex link-container'>
-    <span>View Full Project Archive</span>
-    <Icon name='ph:arrow-right-bold' class='icon small' />
-  </a>
 </section>
 <style>
   .card-container {
