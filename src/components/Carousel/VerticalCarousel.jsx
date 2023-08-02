@@ -27,19 +27,33 @@ const VerticalCarousel = ({ data }) => {
     });
   };
 
+  const backToStart = () => {
+    setActiveIndex(dataLength - 1);
+  };
+
   return (
     <article className='carousel'>
       <div className='carousel__wrapper'>
-        <button
-          type='button'
-          className={`carousel__button prev ${
-            activeIndex > 0 ? 'clickable' : 'transparent'
-          }`}
-          disabled={activeIndex <= 0}
-          onClick={() => handleClick('prev')}
-        >
-          <Prev />
-        </button>
+        {activeIndex === 0 ? (
+          <button
+            type='button'
+            className='carousel__button'
+            onClick={backToStart}
+          >
+            Back to Start
+          </button>
+        ) : (
+          <button
+            type='button'
+            className={`carousel__button prev ${
+              activeIndex > 0 ? 'clickable' : 'transparent'
+            }`}
+            disabled={activeIndex <= 0}
+            onClick={() => handleClick('prev')}
+          >
+            <Prev />
+          </button>
+        )}
         <div className='carousel__slide-container'>
           <div className='carousel__inner'>
             {data.map((experience, i) => (
