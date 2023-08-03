@@ -5,7 +5,7 @@ currentRole: Year 1 Undergraduate at NUS
 languages: [CSS, HTML, JavaScript, Python, SCSS]
 library-frameworks: [Astro, Bulma, Flowbite, NodeJS, React, Tailwind]
 tools: [Express, Firebase, Git, GitHub, Jest, MongoDB, Webpack]
-img: /assets/portrait.webp
+img: /portfolio/assets/portrait.webp
 links:
   github: 'https://github.com/GabrielCWT'
   linkedin: 'https://www.linkedin.com/in/gabriel-chang-weng-tang/'

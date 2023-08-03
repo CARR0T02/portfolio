@@ -3,7 +3,7 @@ sortOrder: 7
 title: Weather App
 year: 2023
 description: An app which uses an API to get the current weather of a country.
-imageSrc: /assets/weather-app.webp
+imageSrc: /portfolio/assets/weather-app.webp
 tags: [CSS, HTML, JavaScript, Webpack]
 link:
   GitHub: https://github.com/GabrielCWT/weather-app

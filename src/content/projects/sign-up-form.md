@@ -2,7 +2,7 @@
 sortOrder: 3
 title: Sign Up Form
 year: 2023
-imageSrc: /assets/sign-up-form.webp
+imageSrc: /portfolio/assets/sign-up-form.webp
 tags: [CSS, HTML, JavaScript]
 link:
   GitHub: https://github.com/GabrielCWT/sign-up-form

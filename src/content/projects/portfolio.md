@@ -3,11 +3,11 @@ sortOrder: 12
 title: My Portfolio
 year: 2023
 description: My personal portfolio website
-imageSrc: /assets/test.webp
+imageSrc: /portfolio/assets/test.webp
 tags: [Astro, CSS, SCSS, TypeScript]
 link:
-  GitHub: https://github.com/CARR0T02/memory-card
-  Live: https://carr0t02.github.io/memory-card/
+  GitHub: https://github.com/GabrielCWT/portfolio
+  Live: https://gabrielcwt.github.io/portfolio/
 ---
 
 This project was built using Astro, Sass and Typescript.

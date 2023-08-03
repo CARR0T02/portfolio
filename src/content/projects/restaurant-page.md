@@ -2,7 +2,7 @@
 sortOrder: 5
 title: Restaurant Page
 year: 2023
-imageSrc: /assets/restaurant-page.webp
+imageSrc: /portfolio/assets/restaurant-page.webp
 tags: [CSS, HTML, JavaScript]
 link:
   GitHub: https://github.com/GabrielCWT/restaurant-page

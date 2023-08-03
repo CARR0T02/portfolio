@@ -2,7 +2,7 @@
 sortOrder: 1
 title: Etch-a-Sketch
 year: 2023
-imageSrc: /assets/etch-a-sketch.webp
+imageSrc: /portfolio/assets/etch-a-sketch.webp
 tags: ['CSS', 'HTML', 'JavaScript']
 link:
   GitHub: https://github.com/GabrielCWT/etchasketch

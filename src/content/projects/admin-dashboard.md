@@ -2,7 +2,7 @@
 sortOrder: 4
 title: Admin Dashboard
 year: 2023
-imageSrc: /assets/admin-dashboard.webp
+imageSrc: /portfolio/assets/admin-dashboard.webp
 tags: [CSS, HTML, JavaScript]
 link:
   GitHub: https://github.com/GabrielCWT/admin-dashboard

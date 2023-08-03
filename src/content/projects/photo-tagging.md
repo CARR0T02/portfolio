@@ -3,7 +3,7 @@ sortOrder: 11
 title: Photo Tagging App
 year: 2023
 description: A game to find characters in the picture
-imageSrc: /assets/photo-tagging.webp
+imageSrc: /portfolio/assets/photo-tagging.webp
 tags: [Firebase, Flowbite, React, Tailwind]
 link:
   GitHub: https://github.com/GabrielCWT/photo-tagging/tree/main

@@ -3,7 +3,7 @@ sortOrder: 10
 title: Shopping Cart Project
 year: 2023
 description: A game to find characters in the picture
-imageSrc: /assets/shopping-cart.webp
+imageSrc: /portfolio/assets/shopping-cart.webp
 tags: [JavaScript, React, SCSS]
 link:
   GitHub: https://github.com/GabrielCWT/shopping-cart

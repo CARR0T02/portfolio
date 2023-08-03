@@ -2,7 +2,7 @@
 sortOrder: 8
 title: CV Builder
 year: 2023
-imageSrc: /assets/cv-project.webp
+imageSrc: /portfolio/assets/cv-project.webp
 tags: [Bulma, CSS, HTML, JavaScript, React, SCSS]
 link:
   GitHub: https://github.com/GabrielCWT/cv-project

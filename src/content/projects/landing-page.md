@@ -2,7 +2,7 @@
 sortOrder: 0
 title: Landing Page
 year: 2023
-imageSrc: /assets/landing-page.webp
+imageSrc: /portfolio/assets/landing-page.webp
 tags: [CSS, HTML]
 link:
   GitHub: https://github.com/GabrielCWT/Landing-page

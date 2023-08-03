@@ -3,7 +3,7 @@ sortOrder: 9
 title: Memory Card Project
 year: 2023
 description: A game to click on cards which have not been previously clicked. Includes a high score system. This project was created using React and Sass
-imageSrc: /assets/memory-card.webp
+imageSrc: /portfolio/assets/memory-card.webp
 tags: [JavaScript, React, SCSS]
 link:
   GitHub: https://github.com/GabrielCWT/memory-card

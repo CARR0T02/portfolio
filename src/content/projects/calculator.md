@@ -2,7 +2,7 @@
 sortOrder: 2
 title: Calculator
 year: 2023
-imageSrc: /assets/calculator.webp
+imageSrc: /portfolio/assets/calculator.webp
 tags: [CSS, HTML, JavaScript]
 link:
   GitHub: https://github.com/GabrielCWT/calculator

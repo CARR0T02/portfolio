@@ -4,7 +4,7 @@ const { project } = Astro.props;
 ---
 
 <article class='card'>
-  <a href={'projects/' + project.slug} class='link'>
+  <a href={'/portfolio/projects/' + project.slug} class='link'>
     <div class='container'>
       <h3 class='flex'>
         {project.data.title}
