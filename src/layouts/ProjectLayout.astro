@@ -5,6 +5,7 @@ import Tags from '@components/Tags.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import Footer from '@components/Footer.astro';
+import LinkButton from '@components/Projects/LinkButton.astro';
 
 const { frontmatter } = Astro.props;
 ---
@@ -30,6 +31,24 @@ const { frontmatter } = Astro.props;
           <div class='content'>
             <slot />
             <Tags tags={frontmatter.tags} />
+            <div class='project__link-container'>
+              {
+                frontmatter.link.GitHub && (
+                  <LinkButton
+                    link={frontmatter.link.GitHub}
+                    linkText='GitHub Repo'
+                  />
+                )
+              }
+              {
+                frontmatter.link.Live && (
+                  <LinkButton
+                    link={frontmatter.link.Live}
+                    linkText='Live Demo'
+                  />
+                )
+              }
+            </div>
           </div>
         </main>
       </div>
@@ -62,6 +81,12 @@ const { frontmatter } = Astro.props;
 
       h1 {
         text-align: center;
+      }
+
+      .project__link-container {
+        padding-top: 2rem;
+        display: flex;
+        gap: 2rem;
       }
 
       @media screen and (max-width: 600px) {

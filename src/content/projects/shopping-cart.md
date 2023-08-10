@@ -2,7 +2,7 @@
 sortOrder: 10
 title: Shopping Cart Project
 year: 2023
-description: A game to find characters in the picture
+description: A project which fetches products from an API and has a shopping cart feature.
 imageSrc: /portfolio/assets/shopping-cart.webp
 tags: [JavaScript, React, SCSS]
 link:

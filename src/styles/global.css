@@ -71,6 +71,10 @@ h2 {
   --card-hover: hsla(30, 1%, 37%, 0.2);
 
   --clr-primary-text: hsl(20, 70%, 49%);
+
+  --bgc-carousel-right: white;
+  --bgc-carousel-left: var(--clr-primary-text);
+  --clr-carousel-lead: white;
   /* TODO: See if I need secondary clr --clr-secondary: hsl(210, 20%, 22%); */
 }
 /* Dark Theme */
@@ -91,6 +95,10 @@ h2 {
 
   --clr-primary-text: hsl(20, 100%, 65%);
   --clr-secondary: hsl(172, 70%, 55%);
+
+  --bgc-carousel-right: hsl(210, 25%, 22%);
+  --bgc-carousel-left: hsl(20, 65%, 51%);
+  --clr-carousel-lead: white;
 }
 
 /* Helpers Start*/
@@ -255,6 +263,7 @@ tr {
 
   .link:hover {
     color: var(--clr-link-hover);
+    border-color: var(--clr-link-hover);
     transition: color 300ms ease;
   }
 

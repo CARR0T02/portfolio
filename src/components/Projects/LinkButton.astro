@@ -1,0 +1,12 @@
+---
+const { link, linkText } = Astro.props;
+---
+
+<a href={link} class='link' target='_blank'>{linkText}</a>
+<style>
+  a {
+    border: 2px solid var(--clr-link);
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+  }
+</style>
