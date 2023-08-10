@@ -34,7 +34,7 @@ const VerticalCarousel = ({ data }) => {
   return (
     <article className='carousel'>
       <div className='carousel__wrapper'>
-        {activeIndex === 0 ? (
+        {/* {activeIndex === 0 ? (
           <button
             type='button'
             className='carousel__button'
@@ -53,7 +53,7 @@ const VerticalCarousel = ({ data }) => {
           >
             <Prev />
           </button>
-        )}
+        )} */}
         <div className='carousel__slide-container'>
           <div className='carousel__inner'>
             {data.map((experience, i) => (

@@ -24,11 +24,12 @@ function CarouselItem({ experience, index, activeIndex, setActiveIndex }) {
         height: `${itemHeight}px`,
       }}
     >
-      <span>
+      {/* <span>
         {experience.data.start} — {experience.data.end}
-      </span>
+      </span> */}
       <header>
-        {experience.data.company} · {experience.data.position}
+        {experience.data.company}
+        {/* · {experience.data.position} */}
       </header>
     </button>
   );
