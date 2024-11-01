@@ -12,9 +12,9 @@ const projects = defineCollection({
     imageSrc: z.string().optional(),
     tags: z.array(z.string()),
     link: z.object({
-      GitHub: z.string().url(),
+      GitHub: z.string().url().optional(),
       Live: z.string().url().optional(),
-    }),
+    }).optional(),
   }),
 });
 

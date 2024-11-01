@@ -9,7 +9,7 @@ const { mdFile } = Astro.props;
 const { Content } = await mdFile.render();
 ---
 
-<li class='card link'>
+<li class='card link li-no-style'>
   <a href={mdFile.data.url} target='_blank'>
     <div>
       <span class='link'>{mdFile.data.start} — {mdFile.data.end}</span>

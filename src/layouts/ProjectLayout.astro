@@ -31,7 +31,7 @@ const { frontmatter } = Astro.props;
           <div class='content'>
             <slot />
             <Tags tags={frontmatter.tags} />
-            <div class='project__link-container'>
+            {frontmatter.link && <div class='project__link-container'>
               {
                 frontmatter.link.GitHub && (
                   <LinkButton
@@ -48,7 +48,7 @@ const { frontmatter } = Astro.props;
                   />
                 )
               }
-            </div>
+            </div>}
           </div>
         </main>
       </div>
